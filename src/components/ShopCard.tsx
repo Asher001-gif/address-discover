@@ -6,7 +6,7 @@ const ShopCard = ({ name, service, address, phone, rating, hours }: Shop) => (
     <div className="flex items-start justify-between gap-3">
       <div>
         <h3 className="text-lg font-semibold text-card-foreground">{name}</h3>
-        <span className="inline-block mt-1 px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary">
+        <span className="inline-block mt-1 px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground">
           {service}
         </span>
       </div>
