@@ -2,16 +2,16 @@ import { MapPin, Phone, Clock, Star } from "lucide-react";
 import type { Shop } from "@/data/shops";
 
 const ShopCard = ({ name, service, address, phone, rating, hours }: Shop) => (
-  <div className="bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-md transition-shadow">
+  <div className="bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-md transition-shadow hover:border-primary/30">
     <div className="flex items-start justify-between gap-3">
       <div>
         <h3 className="text-lg font-semibold text-card-foreground">{name}</h3>
-        <span className="inline-block mt-1 px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary">
+        <span className="inline-block mt-1 px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground">
           {service}
         </span>
       </div>
       {rating && (
-        <div className="flex items-center gap-1 text-accent shrink-0">
+        <div className="flex items-center gap-1 text-accent shrink-0" style={{ color: "hsl(0, 72%, 50%)" }}>
           <Star className="h-4 w-4 fill-current" />
           <span className="text-sm font-semibold">{rating}</span>
         </div>
