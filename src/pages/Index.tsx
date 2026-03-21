@@ -82,6 +82,56 @@ const Index = () => {
           </div>
         )}
       </section>
+
+      {/* Footer Attribution */}
+      <footer className="border-t border-border bg-card px-4 py-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-sm leading-relaxed tracking-wide" style={{ textWrap: "balance" } as React.CSSProperties}>
+            <span className="font-semibold" style={{ color: "hsl(210, 60%, 45%)" }}>Map &amp; POI Data</span>
+            {" © "}
+            <a
+              href="https://www.openstreetmap.org/copyright"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 font-medium hover:opacity-80 transition-opacity"
+              style={{ color: "hsl(210, 60%, 45%)" }}
+            >
+              OpenStreetMap Contributors
+            </a>
+            {" "}
+            <span className="text-muted-foreground">(via </span>
+            <a
+              href="https://overpass-turbo.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:opacity-80 transition-opacity text-muted-foreground"
+            >
+              Overpass Turbo
+            </a>
+            <span className="text-muted-foreground">).</span>
+          </p>
+          <p className="mt-2 text-sm leading-relaxed">
+            <span className="text-muted-foreground">Used and presented by </span>
+            <span className="font-bold" style={{ color: "hsl(0, 72%, 50%)" }}>Samipa</span>
+            <span className="text-muted-foreground">.</span>
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
+            Thanks to the{" "}
+            <span className="font-medium" style={{ color: "hsl(152, 50%, 40%)" }}>OpenStreetMap Community</span>
+            {" "}for providing open data. Licensed under{" "}
+            <a
+              href="https://opendatacommons.org/licenses/odbl/1-0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:opacity-80 transition-opacity"
+              style={{ color: "hsl(210, 60%, 45%)" }}
+            >
+              ODbL 1.0
+            </a>
+            .
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
