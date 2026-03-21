@@ -11,13 +11,16 @@ const Index = () => {
   const handleSearch = (address: string, service: string) => {
     if (!address && !service) return;
 
-    const q = (s: string) => s.toLowerCase();
+    const words = (s: string) => s.toLowerCase().split(/\s+/).filter(Boolean);
+    const matchesAny = (haystack: string, needleWords: string[]) =>
+      needleWords.some((w) => haystack.toLowerCase().includes(w));
+
     const filtered = shops.filter((shop) => {
       const matchAddress = address
-        ? q(shop.address).includes(q(address))
+        ? matchesAny(shop.address, words(address))
         : true;
       const matchService = service
-        ? q(shop.service).includes(q(service)) || q(shop.name).includes(q(service))
+        ? matchesAny(shop.service, words(service)) || matchesAny(shop.name, words(service))
         : true;
       return matchAddress && matchService;
     });
