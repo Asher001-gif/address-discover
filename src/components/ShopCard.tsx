@@ -2,7 +2,7 @@ import { MapPin, Phone, Clock, Star } from "lucide-react";
 import type { Shop } from "@/data/shops";
 
 const ShopCard = ({ name, service, address, phone, rating, hours }: Shop) => (
-  <div className="bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-md transition-shadow">
+  <div className="bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-md transition-shadow hover:border-primary/30">
     <div className="flex items-start justify-between gap-3">
       <div>
         <h3 className="text-lg font-semibold text-card-foreground">{name}</h3>
