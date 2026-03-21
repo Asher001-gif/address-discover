@@ -8,21 +8,17 @@ const Index = () => {
   const [results, setResults] = useState<Shop[] | null>(null);
   const [searched, setSearched] = useState(false);
 
-  const handleSearch = (address: string, service: string) => {
-    if (!address && !service) return;
+  const handleSearch = (query: string) => {
+    if (!query) {
+      setResults(null);
+      setSearched(false);
+      return;
+    }
 
-    const words = (s: string) => s.toLowerCase().split(/\s+/).filter(Boolean);
-    const matchesAny = (haystack: string, needleWords: string[]) =>
-      needleWords.some((w) => haystack.toLowerCase().includes(w));
-
+    const keywords = query.toLowerCase().split(/\s+/).filter(Boolean);
     const filtered = shops.filter((shop) => {
-      const matchAddress = address
-        ? matchesAny(shop.address, words(address))
-        : true;
-      const matchService = service
-        ? matchesAny(shop.service, words(service)) || matchesAny(shop.name, words(service))
-        : true;
-      return matchAddress && matchService;
+      const blob = `${shop.name} ${shop.service} ${shop.address} ${shop.phone || ""}`.toLowerCase();
+      return keywords.every((kw) => blob.includes(kw));
     });
 
     setResults(filtered);
