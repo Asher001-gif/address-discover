@@ -11,7 +11,7 @@ const ShopCard = ({ name, service, address, phone, rating, hours }: Shop) => (
         </span>
       </div>
       {rating && (
-        <div className="flex items-center gap-1 text-accent shrink-0">
+        <div className="flex items-center gap-1 text-accent shrink-0" style={{ color: "hsl(0, 72%, 50%)" }}>
           <Star className="h-4 w-4 fill-current" />
           <span className="text-sm font-semibold">{rating}</span>
         </div>

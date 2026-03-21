@@ -26,10 +26,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Hero */}
+    <div className="min-h-screen flex flex-col bg-background">
+      {/* Hero — cool blue */}
       <section className="relative overflow-hidden bg-primary px-4 pt-20 pb-24 text-center">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(160_60%_48%/0.3),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(212_62%_55%/0.4),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,hsl(152_50%_40%/0.15),transparent_50%)]" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary-foreground/10 text-primary-foreground/80 text-sm">
             <Store className="h-4 w-4" />
@@ -63,9 +64,10 @@ const Index = () => {
 
         {results && results.length > 0 && (
           <>
-            <p className="text-sm text-muted-foreground mb-4">
+            <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
+              <span className="h-2 w-2 rounded-full bg-[hsl(152,50%,40%)]" />
               {results.length} result{results.length > 1 ? "s" : ""} found
-            </p>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {results.map((shop) => (
                 <ShopCard key={shop.id} {...shop} />
@@ -83,48 +85,53 @@ const Index = () => {
         )}
       </section>
 
+      {/* Colored divider strip */}
+      <div className="h-1 w-full flex">
+        <div className="flex-1 bg-primary" />
+        <div className="flex-1 bg-[hsl(152,50%,40%)]" />
+        <div className="flex-1 bg-accent" />
+      </div>
+
       {/* Footer Attribution */}
-      <footer className="border-t border-border bg-card px-4 py-8">
+      <footer className="bg-[hsl(212,30%,18%)] px-4 py-8">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm leading-relaxed tracking-wide" style={{ textWrap: "balance" } as React.CSSProperties}>
-            <span className="font-semibold" style={{ color: "hsl(210, 60%, 45%)" }}>Map &amp; POI Data</span>
+          <p className="text-sm leading-relaxed tracking-wide text-[hsl(210,20%,75%)]" style={{ textWrap: "balance" } as React.CSSProperties}>
+            <span className="font-semibold text-[hsl(210,60%,70%)]">Map &amp; POI Data</span>
             {" © "}
             <a
               href="https://www.openstreetmap.org/copyright"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 font-medium hover:opacity-80 transition-opacity"
-              style={{ color: "hsl(210, 60%, 45%)" }}
+              className="underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-[hsl(210,60%,70%)]"
             >
               OpenStreetMap Contributors
             </a>
             {" "}
-            <span className="text-muted-foreground">(via </span>
+            <span>(via </span>
             <a
               href="https://overpass-turbo.eu/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:opacity-80 transition-opacity text-muted-foreground"
+              className="underline underline-offset-2 hover:opacity-80 transition-opacity"
             >
               Overpass Turbo
             </a>
-            <span className="text-muted-foreground">).</span>
+            <span>).</span>
           </p>
-          <p className="mt-2 text-sm leading-relaxed">
-            <span className="text-muted-foreground">Used and presented by </span>
-            <span className="font-bold" style={{ color: "hsl(0, 72%, 50%)" }}>Samipa</span>
-            <span className="text-muted-foreground">.</span>
+          <p className="mt-2 text-sm leading-relaxed text-[hsl(210,20%,75%)]">
+            <span>Used and presented by </span>
+            <span className="font-bold text-accent">Samipa</span>
+            <span>.</span>
           </p>
-          <p className="mt-2 text-xs text-muted-foreground leading-relaxed" style={{ textWrap: "balance" } as React.CSSProperties}>
+          <p className="mt-2 text-xs leading-relaxed text-[hsl(210,20%,65%)]" style={{ textWrap: "balance" } as React.CSSProperties}>
             Thanks to the{" "}
-            <span className="font-medium" style={{ color: "hsl(152, 50%, 40%)" }}>OpenStreetMap Community</span>
+            <span className="font-medium text-[hsl(152,50%,60%)]">OpenStreetMap Community</span>
             {" "}for providing open data. Licensed under{" "}
             <a
               href="https://opendatacommons.org/licenses/odbl/1-0/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-              style={{ color: "hsl(210, 60%, 45%)" }}
+              className="underline underline-offset-2 hover:opacity-80 transition-opacity text-[hsl(210,60%,70%)]"
             >
               ODbL 1.0
             </a>
