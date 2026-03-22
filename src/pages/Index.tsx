@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { SearchX, Store } from "lucide-react";
 import SearchForm from "@/components/SearchForm";
 import ShopCard from "@/components/ShopCard";
@@ -8,7 +8,7 @@ const Index = () => {
   const [results, setResults] = useState<Shop[] | null>(null);
   const [searched, setSearched] = useState(false);
 
-  const handleSearch = (query: string) => {
+  const handleSearch = useCallback((query: string) => {
     if (!query) {
       setResults(null);
       setSearched(false);
@@ -23,11 +23,11 @@ const Index = () => {
 
     setResults(filtered);
     setSearched(true);
-  };
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Hero — cool blue */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-primary px-4 pt-20 pb-24 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(212_62%_55%/0.4),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,hsl(152_50%_40%/0.15),transparent_50%)]" />
@@ -108,28 +108,18 @@ const Index = () => {
         <div className="flex-1 bg-accent" />
       </div>
 
-      {/* Footer Attribution */}
+      {/* Footer */}
       <footer className="bg-[hsl(212,30%,18%)] px-4 py-8">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm leading-relaxed tracking-wide text-[hsl(210,20%,75%)]" style={{ textWrap: "balance" } as React.CSSProperties}>
             <span className="font-semibold text-[hsl(210,60%,70%)]">Map &amp; POI Data</span>
             {" © "}
-            <a
-              href="https://www.openstreetmap.org/copyright"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-[hsl(210,60%,70%)]"
-            >
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 font-medium hover:opacity-80 transition-opacity text-[hsl(210,60%,70%)]">
               OpenStreetMap Contributors
             </a>
             {" "}
             <span>(via </span>
-            <a
-              href="https://overpass-turbo.eu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:opacity-80 transition-opacity"
-            >
+            <a href="https://overpass-turbo.eu/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-80 transition-opacity">
               Overpass Turbo
             </a>
             <span>).</span>
@@ -143,12 +133,7 @@ const Index = () => {
             Thanks to the{" "}
             <span className="font-medium text-[hsl(152,50%,60%)]">OpenStreetMap Community</span>
             {" "}for providing open data. Licensed under{" "}
-            <a
-              href="https://opendatacommons.org/licenses/odbl/1-0/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:opacity-80 transition-opacity text-[hsl(210,60%,70%)]"
-            >
+            <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-80 transition-opacity text-[hsl(210,60%,70%)]">
               ODbL 1.0
             </a>
             .
