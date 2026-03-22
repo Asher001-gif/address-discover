@@ -85,6 +85,22 @@ const Index = () => {
         )}
       </section>
 
+      {/* Business Profile CTA */}
+      <section className="px-4 py-8 text-center">
+        <div className="flex items-center justify-center gap-3 flex-wrap">
+          <a
+            href="https://forms.gle/4RenPQUZAiRf5DMb8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-accent-foreground text-sm font-semibold shadow-sm hover:bg-accent/90 active:scale-[0.97] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <Store className="h-4 w-4" />
+            Business Profile
+          </a>
+          <span className="text-sm text-muted-foreground">Add, Update or Remove your shop!</span>
+        </div>
+      </section>
+
       {/* Colored divider strip */}
       <div className="h-1 w-full flex">
         <div className="flex-1 bg-primary" />
