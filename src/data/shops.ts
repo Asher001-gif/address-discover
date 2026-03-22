@@ -6,6 +6,7 @@ export interface Shop {
   phone?: string;
   rating?: number;
   hours?: string;
+  mapLink?: string;
 }
 
 export const shops: Shop[] = [
