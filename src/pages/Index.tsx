@@ -132,6 +132,13 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Last Updated */}
+      <div className="px-4 py-4 text-center">
+        <p className="text-xs tracking-wide text-muted-foreground/70">
+          Last updated <span className="font-semibold text-muted-foreground">23 Jun 2025</span>
+        </p>
+      </div>
+
       {/* Colored divider strip */}
       <div className="h-1 w-full flex">
         <div className="flex-1 bg-primary" />
