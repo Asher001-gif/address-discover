@@ -13,17 +13,22 @@ const Index = () => {
     if (!query) {
       setResults(shops);
       setSearched(false);
+      setLoading(false);
       return;
     }
 
-    const keywords = query.toLowerCase().split(/\s+/).filter(Boolean);
-    const filtered = shops.filter((shop) => {
-      const blob = `${shop.name} ${shop.service} ${shop.address} ${shop.phone || ""}`.toLowerCase();
-      return keywords.some((kw) => blob.includes(kw));
-    });
+    setLoading(true);
+    setTimeout(() => {
+      const keywords = query.toLowerCase().split(/\s+/).filter(Boolean);
+      const filtered = shops.filter((shop) => {
+        const blob = `${shop.name} ${shop.service} ${shop.address} ${shop.phone || ""}`.toLowerCase();
+        return keywords.some((kw) => blob.includes(kw));
+      });
 
-    setResults(filtered);
-    setSearched(true);
+      setResults(filtered);
+      setSearched(true);
+      setLoading(false);
+    }, 400);
   }, []);
 
   return (
