@@ -10,7 +10,7 @@ const Index = () => {
 
   const handleSearch = useCallback((query: string) => {
     if (!query) {
-      setResults(null);
+      setResults(shops);
       setSearched(false);
       return;
     }
@@ -18,7 +18,7 @@ const Index = () => {
     const keywords = query.toLowerCase().split(/\s+/).filter(Boolean);
     const filtered = shops.filter((shop) => {
       const blob = `${shop.name} ${shop.service} ${shop.address} ${shop.phone || ""}`.toLowerCase();
-      return keywords.every((kw) => blob.includes(kw));
+      return keywords.some((kw) => blob.includes(kw));
     });
 
     setResults(filtered);
