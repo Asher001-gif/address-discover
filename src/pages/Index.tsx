@@ -60,7 +60,32 @@ const Index = () => {
 
       {/* Results */}
       <section className="flex-1 px-4 py-12 max-w-4xl mx-auto w-full">
-        {searched && results && results.length === 0 && (
+        {loading && (
+          <div className="flex flex-col items-center justify-center py-16 text-center text-muted-foreground">
+            <div className="relative h-20 w-20 mb-4">
+              {/* Orbit ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-[spin_6s_linear_infinite]" />
+              {/* Satellite */}
+              <div className="absolute inset-0 animate-[spin_1.5s_cubic-bezier(0.4,0,0.2,1)_infinite]">
+                <div className="absolute -top-1 left-1/2 -translate-x-1/2">
+                  <svg className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M13 7 8 2 2 8l5 5" />
+                    <path d="m17 11 5 5-5 5-5-5" />
+                    <path d="m8 13 4-4" />
+                    <path d="m16 8 1-4 4 1" />
+                  </svg>
+                </div>
+              </div>
+              {/* Center pulse */}
+              <div className="absolute inset-[30%] rounded-full bg-primary/20 animate-ping" />
+              <div className="absolute inset-[35%] rounded-full bg-primary/40" />
+            </div>
+            <p className="text-lg font-medium">Scanning nearby...</p>
+            <p className="mt-1 text-sm">Finding shops & services for you</p>
+          </div>
+        )}
+
+        {!loading && searched && results && results.length === 0 && (
           <div className="flex flex-col items-center justify-center py-16 text-center text-muted-foreground">
             <SearchX className="h-16 w-16 mb-4 opacity-40" />
             <p className="text-xl font-medium">Nothing found</p>
@@ -68,7 +93,7 @@ const Index = () => {
           </div>
         )}
 
-        {results && results.length > 0 && (
+        {!loading && results && results.length > 0 && (
           <>
             <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium">
               <span className="h-2 w-2 rounded-full bg-[hsl(152,50%,40%)]" />
@@ -82,7 +107,7 @@ const Index = () => {
           </>
         )}
 
-        {!searched && (
+        {!loading && !searched && (
           <div className="flex flex-col items-center justify-center py-16 text-center text-muted-foreground">
             <MapPinIcon />
             <p className="mt-4 text-lg font-medium">Search for nearby shops</p>
