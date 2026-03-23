@@ -7,6 +7,7 @@ import { shops, type Shop } from "@/data/shops";
 const Index = () => {
   const [results, setResults] = useState<Shop[] | null>(null);
   const [searched, setSearched] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = useCallback((query: string) => {
     if (!query) {
