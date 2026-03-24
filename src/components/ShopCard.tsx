@@ -3,7 +3,7 @@ import { MapPin, Phone, Clock, Star, ExternalLink, Share2, Check, Flag, BadgeChe
 import type { Shop } from "@/data/shops";
 import { toSlug } from "@/lib/slug";
 
-const ShopCard = ({ id, name, service, address, phone, rating, hours, mapLink }: Shop) => {
+const ShopCard = ({ id, name, service, address, phone, rating, hours, mapLink, verified }: Shop) => {
   const [copied, setCopied] = useState(false);
 
   const hasExactLink = !!mapLink;
