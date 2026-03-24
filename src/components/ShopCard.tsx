@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Clock, Star, ExternalLink, Share2, Check, Flag } from "lucide-react";
+import { MapPin, Phone, Clock, Star, ExternalLink, Share2, Check, Flag, BadgeCheck } from "lucide-react";
 import type { Shop } from "@/data/shops";
 import { toSlug } from "@/lib/slug";
 
