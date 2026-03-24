@@ -7,6 +7,7 @@ export interface Shop {
   rating?: number;
   hours?: string;
   mapLink?: string;
+  verified?: boolean;
 }
 
 export const shops: Shop[] = [
@@ -2795,5 +2796,117 @@ export const shops: Shop[] = [
     "service": "Cafe",
     "address": "27UB, Block UB",
     "phone": "+91 99533 67189"
+  },
+  {
+    "id": "nice-salon-001",
+    "name": "Nice Salon",
+    "service": "Salon",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "7398330542",
+    "verified": true
+  },
+  {
+    "id": "pratap-bike-centre-002",
+    "name": "Pratap Bike Centre",
+    "service": "Vehicle Repair & Service",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9910305119",
+    "verified": true
+  },
+  {
+    "id": "poddar-general-store-003",
+    "name": "Poddar General Store",
+    "service": "Grocery",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "8929008816",
+    "verified": true
+  },
+  {
+    "id": "kanak-stationary-004",
+    "name": "Kanak Stationary",
+    "service": "Stationary",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "7970881001",
+    "verified": true
+  },
+  {
+    "id": "digital-seva-005",
+    "name": "Digital Seva",
+    "service": "Mobile Phone Service",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "7838913665",
+    "verified": true
+  },
+  {
+    "id": "aroras-telecom-006",
+    "name": "Arora's Telecom",
+    "service": "Mobile Phone Service",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "8826202040",
+    "verified": true
+  },
+  {
+    "id": "salmaan-hair-salon-007",
+    "name": "Salmaan Hair Salon",
+    "service": "Salon",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "8851564628",
+    "verified": true
+  },
+  {
+    "id": "gupta-medicos-008",
+    "name": "Gupta Medicos",
+    "service": "Pharmacy",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9873179212",
+    "verified": true
+  },
+  {
+    "id": "a1-guru-tyres-009",
+    "name": "A1 Guru Tyres",
+    "service": "Vehicle Service & Repair",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "8076261707",
+    "verified": true
+  },
+  {
+    "id": "anita-healthcare-010",
+    "name": "Anita Healthcare",
+    "service": "Clinic",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9990223644",
+    "verified": true
+  },
+  {
+    "id": "anita-medicos-011",
+    "name": "Anita Medicos",
+    "service": "Pharmacy",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9990223644",
+    "verified": true
+  },
+  {
+    "id": "lalit-dairy-012",
+    "name": "Lalit Dairy",
+    "service": "Dairy Shop",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9990907909",
+    "verified": true
+  },
+  {
+    "id": "raj-tailor-013",
+    "name": "Raj Tailor",
+    "service": "Tailor",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9871886297",
+    "verified": true
+  },
+  {
+    "id": "ro-tech-india-014",
+    "name": "RO Tech India",
+    "service": "Water Purification Service",
+    "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
+    "phone": "9953056321",
+    "verified": true
   }
 ];
