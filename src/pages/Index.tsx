@@ -134,8 +134,8 @@ const Index = () => {
 
       {/* Last Updated */}
       <div className="px-4 py-4 text-center">
-        <p className="text-xs tracking-wide text-muted-foreground/70">
-          Last updated <span className="font-semibold text-muted-foreground">23 Jun 2025</span>
+        <p id="lastUpdated" className="text-xs tracking-wide text-muted-foreground/70">
+          Last updated: <span className="font-semibold text-muted-foreground">{new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
         </p>
       </div>
 
