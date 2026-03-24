@@ -2903,7 +2903,7 @@ export const shops: Shop[] = [
   },
   {
     "id": "ro-tech-india-014",
-    "name": "RO Tech India",
+    "name": "RO Tech India (RO Repair & Service)",
     "service": "Water Purification Service",
     "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
     "phone": "9953056321",
