@@ -94,13 +94,13 @@ const ShopCard = ({ id, name, service, address, phone, rating, hours, mapLink }:
           Open in Maps
         </a>
         <a
-          href={`/shop/${slug}`}
+          href="https://forms.gle/4RenPQUZAiRf5DMb8"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-secondary-foreground text-xs font-semibold hover:bg-secondary/80 active:scale-[0.97] transition-all"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-destructive text-destructive-foreground text-xs font-semibold hover:bg-destructive/90 active:scale-[0.97] transition-all"
         >
-          <ExternalLink className="h-3.5 w-3.5" />
-          View Shop
+          <Flag className="h-3.5 w-3.5" />
+          Report
         </a>
         <button
           onClick={handleShare}
