@@ -53,7 +53,14 @@ const ShopCard = ({ id, name, service, address, phone, rating, hours, mapLink, v
     <div className="bg-card rounded-xl border border-border p-5 shadow-sm hover:shadow-md transition-shadow hover:border-primary/30">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-semibold text-card-foreground">{name}</h3>
+          <h3 className="text-lg font-semibold text-card-foreground flex items-center gap-1.5">
+            {name}
+            {verified && (
+              <span className="inline-flex items-center justify-center rounded-full bg-[hsl(142,70%,45%)] p-0.5">
+                <Check className="h-3 w-3 text-white" />
+              </span>
+            )}
+          </h3>
           <span className="inline-block mt-1 px-2.5 py-0.5 text-xs font-medium rounded-full bg-secondary text-secondary-foreground">
             {service}
           </span>
