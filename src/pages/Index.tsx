@@ -25,8 +25,16 @@ const Index = () => {
         return keywords.some((kw) => blob.includes(kw));
       });
 
-      // Boost verified shops whose name/service closely matches the query
+      // Boost: RO Tech India always first for RO/water queries
+      const roKeywords = ["ro", "water", "water purification"];
+      const isRoQuery = keywords.some((kw) => roKeywords.includes(kw) || "water purification".includes(kw));
+
       filtered.sort((a, b) => {
+        const isRoA = a.id === "ro-tech-india-014";
+        const isRoB = b.id === "ro-tech-india-014";
+        if (isRoQuery && isRoA) return -1;
+        if (isRoQuery && isRoB) return 1;
+
         const q = query.toLowerCase();
         const scoreShop = (s: Shop) => {
           const name = s.name.toLowerCase();
