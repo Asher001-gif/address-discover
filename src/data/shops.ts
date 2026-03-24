@@ -7,6 +7,7 @@ export interface Shop {
   rating?: number;
   hours?: string;
   mapLink?: string;
+  verified?: boolean;
 }
 
 export const shops: Shop[] = [
