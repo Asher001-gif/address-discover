@@ -25,6 +25,19 @@ const Index = () => {
         return keywords.some((kw) => blob.includes(kw));
       });
 
+      // Boost verified shops whose name/service closely matches the query
+      filtered.sort((a, b) => {
+        const q = query.toLowerCase();
+        const scoreShop = (s: Shop) => {
+          const name = s.name.toLowerCase();
+          const service = s.service.toLowerCase();
+          if (name.includes(q) || q.includes(name)) return 2;
+          if (keywords.some((kw) => name.includes(kw) || service.includes(kw)) && s.verified) return 1;
+          return 0;
+        };
+        return scoreShop(b) - scoreShop(a);
+      });
+
       setResults(filtered);
       setSearched(true);
       setLoading(false);
