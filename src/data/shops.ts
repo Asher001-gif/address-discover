@@ -8,6 +8,7 @@ export interface Shop {
   hours?: string;
   mapLink?: string;
   verified?: boolean;
+  tags?: string[];
 }
 
 export const shops: Shop[] = [
