@@ -3,6 +3,7 @@ import { SearchX, Store } from "lucide-react";
 import SearchForm from "@/components/SearchForm";
 import ShopCard from "@/components/ShopCard";
 import { shops, type Shop } from "@/data/shops";
+import { searchShops } from "@/lib/search";
 
 const Index = () => {
   const [results, setResults] = useState<Shop[] | null>(null);
@@ -10,8 +11,9 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
 
   const handleSearch = useCallback((query: string) => {
-    if (!query) {
-      setResults(shops);
+    const trimmed = query.trim();
+    if (!trimmed) {
+      setResults(null);
       setSearched(false);
       setLoading(false);
       return;
@@ -19,33 +21,7 @@ const Index = () => {
 
     setLoading(true);
     setTimeout(() => {
-      const keywords = query.toLowerCase().split(/\s+/).filter(Boolean);
-      const filtered = shops.filter((shop) => {
-        const blob = `${shop.name} ${shop.service} ${shop.address} ${shop.phone || ""}`.toLowerCase();
-        return keywords.some((kw) => blob.includes(kw));
-      });
-
-      // Boost: RO Tech India always first for RO/water queries
-      const roKeywords = ["ro", "water", "water purification"];
-      const isRoQuery = keywords.some((kw) => roKeywords.includes(kw) || "water purification".includes(kw));
-
-      filtered.sort((a, b) => {
-        const isRoA = a.id === "ro-tech-india-014";
-        const isRoB = b.id === "ro-tech-india-014";
-        if (isRoQuery && isRoA) return -1;
-        if (isRoQuery && isRoB) return 1;
-
-        const q = query.toLowerCase();
-        const scoreShop = (s: Shop) => {
-          const name = s.name.toLowerCase();
-          const service = s.service.toLowerCase();
-          if (name.includes(q) || q.includes(name)) return 2;
-          if (keywords.some((kw) => name.includes(kw) || service.includes(kw)) && s.verified) return 1;
-          return 0;
-        };
-        return scoreShop(b) - scoreShop(a);
-      });
-
+      const filtered = searchShops(trimmed, shops);
       setResults(filtered);
       setSearched(true);
       setLoading(false);
