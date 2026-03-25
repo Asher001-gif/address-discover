@@ -2908,6 +2908,7 @@ export const shops: Shop[] = [
     "service": "Water Purification Service",
     "address": "Pardhan Market, Nilothi Extension near Gram Sabha Colony, New Delhi-110041",
     "phone": "9953056321",
-    "verified": true
+    "verified": true,
+    "tags": ["ro", "water", "purifier", "repair", "service", "water purification", "ro repair", "filter", "aquaguard", "kent"]
   }
 ];
