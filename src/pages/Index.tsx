@@ -130,8 +130,11 @@ const Index = () => {
       </section>
 
 
-      {/* Last Updated */}
-      <div className="px-4 py-4 text-center">
+      {/* Terms & Last Updated */}
+      <div className="px-4 py-4 text-center space-y-2">
+        <a href="/terms" className="text-xs font-medium text-muted-foreground hover:text-foreground underline underline-offset-2 transition-colors">
+          Terms &amp; Conditions
+        </a>
         <p id="lastUpdated" className="text-xs tracking-wide text-muted-foreground/70">
           Last updated: <span className="font-semibold text-muted-foreground">{new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}</span>
         </p>
