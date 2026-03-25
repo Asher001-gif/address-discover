@@ -116,7 +116,7 @@ const ShopCard = ({ id, name, service, address, phone, rating, hours, mapLink, v
           {copied ? <Check className="h-3.5 w-3.5" /> : <Share2 className="h-3.5 w-3.5" />}
           {copied ? "Copied!" : "Share"}
         </button>
-        {!hasExactLink && (
+        {!hasExactLink && !verified && (
           <span className="text-[11px] text-muted-foreground/60 italic">Location may not be exact</span>
         )}
       </div>
