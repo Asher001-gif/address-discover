@@ -52,6 +52,18 @@ const Index = () => {
       <section className="px-4 -mt-7 relative z-20">
         <div className="max-w-2xl mx-auto bg-card rounded-2xl border border-border shadow-lg p-4 sm:p-6">
           <SearchForm onSearch={handleSearch} />
+          <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
+            <a
+              href="https://forms.gle/4RenPQUZAiRf5DMb8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent text-accent-foreground text-xs font-semibold hover:bg-accent/90 active:scale-[0.97] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <Store className="h-3.5 w-3.5" />
+              Business Profile
+            </a>
+            <span className="text-xs text-muted-foreground">Add, Update or Remove your shop!</span>
+          </div>
         </div>
       </section>
 
