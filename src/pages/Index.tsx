@@ -30,22 +30,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {/* Business Profile CTA */}
-      <div className="bg-accent/10 border-b border-border px-4 py-2.5 text-center">
-        <div className="max-w-2xl mx-auto flex items-center justify-center gap-3 flex-wrap">
-          <a
-            href="https://forms.gle/4RenPQUZAiRf5DMb8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-accent text-accent-foreground text-sm font-semibold hover:bg-accent/90 active:scale-[0.97] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <Store className="h-4 w-4" />
-            Business Profile
-          </a>
-          <span className="text-sm text-muted-foreground">Add, Update or Remove your shop!</span>
-        </div>
-      </div>
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary px-4 pt-20 pb-24 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(212_62%_55%/0.4),transparent_60%)]" />
@@ -68,6 +52,18 @@ const Index = () => {
       <section className="px-4 -mt-7 relative z-20">
         <div className="max-w-2xl mx-auto bg-card rounded-2xl border border-border shadow-lg p-4 sm:p-6">
           <SearchForm onSearch={handleSearch} />
+          <div className="mt-3 flex items-center justify-center gap-2 flex-wrap">
+            <a
+              href="https://forms.gle/4RenPQUZAiRf5DMb8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-accent text-accent-foreground text-xs font-semibold hover:bg-accent/90 active:scale-[0.97] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <Store className="h-3.5 w-3.5" />
+              Business Profile
+            </a>
+            <span className="text-xs text-muted-foreground">Add, Update or Remove your shop!</span>
+          </div>
         </div>
       </section>
 
