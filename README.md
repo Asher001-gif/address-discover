@@ -1,3 +1,2 @@
-# Welcome to your Lovable project
+# samipa things
 
-TODO: Document your project here
